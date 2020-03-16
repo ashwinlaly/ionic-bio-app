@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item *ngFor="let product of products" [routerLink]="['/folder/Gallery/', product.id]">
+      <ion-avatar slot="start">
+        <img src="./avatar-finn.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{product.name}}</h2>
+        <!-- <h3>I'm a big deal</h3> -->
+        <p>{{product.description}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

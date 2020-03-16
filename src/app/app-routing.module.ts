@@ -4,8 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'folder/Home',
     pathMatch: 'full'
+  },
+  {
+    path: 'folder/Gallery',
+    loadChildren: () => import('./gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
+  {
+    path: 'folder/Gallery/:id',
+    loadChildren: () => import('./gallery/gallery-details/gallery-details.module').then( m => m.GalleryDetailsPageModule)
   },
   {
     path: 'folder/:id',
